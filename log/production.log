@@ -1,0 +1,6 @@
+W, [2015-07-07T17:23:58.466937 #30387]  WARN -- : WARNING: The box-sizing mixin is deprecated and will be removed in the next major version release. This property can now be used un-prefixed.
+         on line 410 of /Users/apprentice/.rbenv/versions/2.0.0-p353/lib/ruby/gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `box-sizing'
+         from line 84 of /Users/apprentice/Desktop/dragonflyrepos/dragonflydata/app/assets/stylesheets/pages.scss
+         from line 5 of /Users/apprentice/Desktop/dragonflyrepos/dragonflydata/app/assets/stylesheets/application.css.sass
+
+
