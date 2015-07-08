@@ -4984,3 +4984,57 @@ Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd81
 
 
 Started GET "/assets/pages.self-0fdf48e807166b7a3649ead811edbdc489934dcf1db7e739527c76c714c100cb.js?body=1" for ::1 at 2015-07-07 18:54:58 -0400
+
+
+Started GET "/" for ::1 at 2015-07-07 23:32:16 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+WARNING: The box-sizing mixin is deprecated and will be removed in the next major version release. This property can now be used un-prefixed.
+         on line 410 of /Library/Ruby/Gems/2.0.0/gems/bourbon-4.2.3/app/assets/stylesheets/_bourbon-deprecated-upcoming.scss, in `box-sizing'
+         from line 84 of /Users/thomasgoldenberg/Desktop/devbootcamp/github-boottracker-v1/app/assets/stylesheets/pages.scss
+         from line 5 of /Users/thomasgoldenberg/Desktop/devbootcamp/github-boottracker-v1/app/assets/stylesheets/application.css.sass
+
+
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 9427ms (Views: 9426.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-07-07 23:32:25 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (0.0ms)
+  Rendered layouts/_header.html.erb (0.0ms)
+Completed 200 OK in 42ms (Views: 42.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-877fdb65f68418af9e3910726c6e8494afe724f7ca3d864a3e7cf46e2f0d4b17.css?body=1" for ::1 at 2015-07-07 23:32:25 -0400
+
+
+Started GET "/assets/checkbox.self-01e2485c5f234e25b9035e742cece02aa0849e26e26a5467f883bf1c72571c9f.js?body=1" for ::1 at 2015-07-07 23:32:26 -0400
+
+
+Started GET "/assets/pages.self-0fdf48e807166b7a3649ead811edbdc489934dcf1db7e739527c76c714c100cb.js?body=1" for ::1 at 2015-07-07 23:32:26 -0400
+
+
+Started GET "/" for ::1 at 2015-07-07 23:33:26 -0400
+Processing by PagesController#home as HTML
+  Rendered pages/home.html.erb within layouts/application (1.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+Completed 200 OK in 525ms (Views: 524.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/checkbox.self-01e2485c5f234e25b9035e742cece02aa0849e26e26a5467f883bf1c72571c9f.js?body=1" for ::1 at 2015-07-07 23:33:27 -0400
+
+
+Started GET "/assets/pages.self-0fdf48e807166b7a3649ead811edbdc489934dcf1db7e739527c76c714c100cb.js?body=1" for ::1 at 2015-07-07 23:33:27 -0400
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-07-07 23:33:27 -0400
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-07-07 23:33:27 -0400
+
+
+Started GET "/assets/application.self-377610cd7c1509e934744c810e3b4cf672dfbcacac3274e7d039827e2ae0fcc7.js?body=1" for ::1 at 2015-07-07 23:33:27 -0400
+
+
+Started GET "/assets/application.self-877fdb65f68418af9e3910726c6e8494afe724f7ca3d864a3e7cf46e2f0d4b17.css?body=1" for ::1 at 2015-07-07 23:33:27 -0400
