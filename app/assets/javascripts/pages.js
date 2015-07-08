@@ -1,7 +1,6 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
 $(document).ready(function() {
 
+  // make sure user can only select one of the checkboxes for AJAX request
   $('.check').on('click', function() {
     var that = this;
     for(i=0;i<6;i++) {
@@ -9,9 +8,7 @@ $(document).ready(function() {
       this.checked = true;
       id = $(this).attr('id');
       $('.summary').html(id);
-
     }
-
   });
 
   // navigation to respond to screen resizing
@@ -28,6 +25,7 @@ $(document).ready(function() {
   });
 
   var page = 1;
+  var githubKey = $('meta[name="github-token"]').attr('content');
 
   // AJAX call to get most recent repositories of DBC students/\
   var CHICAGO_DRAGONFLIES = ["ac-adekunle", "amberzilla", "boguth", "withtwoemms", "H12", "mccallumjack", "jasonpettus", "joeaawad", "Faithsend", "michaelkunc", "bwootten", "nsiefken", "pmacaluso3"];
@@ -39,8 +37,11 @@ $(document).ready(function() {
   var githubUrl = "https://api.github.com/users/";
   $('.btn-lg').on('click', function(e) {
     e.preventDefault();
+
     var cohort = $('.summary').html();
     var AJAXCohort = NYC_DRAGONFLIES;
+
+    // switch statement to determine AJAX call - default is 2015 NYC Dragonflies
     switch(cohort) {
       case "nyc-fiery-skippers":
         AJAXCohort = NYC_FIERY_SKIPPERS;
@@ -64,23 +65,39 @@ $(document).ready(function() {
         AJAXCohort = NYC_DRAGONFLIES;
       break;
     }
-    console.log(cohort, AJAXCohort);
+    // reset the screen
     $('.user-profile').remove();
+
+    // AJAX call for each user with up-to-date repos
     AJAXCohort.forEach(function(element, idx) {
       var username = element;
       var index = idx + 1;
 
       $.ajax({
-        url: githubUrl + username + "/repos?sort=created&access_token=a99ebfa9324ccb18ed08527715e659e3d8e339f8",
+        url: githubUrl + username + "/repos?sort=created&access_token=" + githubKey,
         method: "get",
         dataType: "json"
       }).done(function(data) {
-        var element = '<div class="user-profile"><div class="user-avatar"><img src="' + data[0]["owner"]["avatar_url"] + '"/></div><div class="user-info"><hr/><h4>'+ username + '</h4>';
+
+        // create divs and content for user profile
+        var element = '<div class="user-profile">' +
+                        '<div class="user-avatar">' +
+                          '<img src="' + data[0]["owner"]["avatar_url"] + '"/>' +
+                        '</div>' +
+                        '<div class="user-info"><hr/><h4>'+ username + '</h4>';
         data.forEach(function(repo, idx) {
           if (idx < 3) {
-            element += '<p><a href="' + repo["html_url"] + '">' + repo["name"] + "</a> || created on: " + new Date(repo["created_at"]).toLocaleDateString() + "</p>";
+
+            // create repository content
+            element += '<p>' +
+                          '<a href="' + repo["html_url"] + '">' + repo["name"] +
+                          '</a>' +
+                         '|| created on: ' + new Date(repo["created_at"]).toLocaleDateString() +
+                       '</p>';
           }
         });
+
+        // close profile and append to DOM
         element += "</div></div>";
         $('.display-panel').append(element);
 
@@ -88,7 +105,5 @@ $(document).ready(function() {
         console.log(error)
       });
     });
-  })
+  });
 });
-
-
